@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		{{a}}
+	</div>
+</body>
+
+<script type="text/javascript">
+	data = {a:1}
+	vm = new Vue({
+		el	: "#app",
+		data: data
+	});
+
+	//watch需要定义在修改值之前
+	vm.$watch('a', function(newVal, oldVal){
+		alert(oldVal);
+		alert(newVal);
+	})
+	
+	data.a = "test..."
+</script>
+</html>
